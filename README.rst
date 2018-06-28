@@ -14,10 +14,7 @@ email-ddns
 
 A DDNS server/client that only rely on free services (email, outer ip getter)
 
-
 * License: AGPL-3.0
-* Documentation: https://email-ddns.readthedocs.io.
-
 
 Features
 --------
