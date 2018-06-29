@@ -10,7 +10,8 @@ with open('README.rst') as readme_file, open('HISTORY.rst') as history_file:
 
 install_requires = [
     'click>=6.0',
-    # TODO: put package requirements here
+    'ipgetter',
+    'attrdict',
 ]
 
 setup_requires = [
