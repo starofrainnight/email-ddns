@@ -5,7 +5,8 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file, open('HISTORY.rst') as history_file:
+with open('README.rst', encoding='utf-8') as readme_file, \
+        open('HISTORY.rst', encoding='utf-8') as history_file:
     long_description = (readme_file.read() + "\n\n" + history_file.read())
 
 install_requires = [
@@ -16,19 +17,17 @@ install_requires = [
 
 setup_requires = [
     'pytest-runner',
-    # TODO(starofrainnight): put setup requirements (distutils extensions, etc.) here
 ]
 
 tests_requires = [
     'pytest',
-    'click>=6.0',
-    # TODO: put package test requirements here
 ]
 
 setup(
     name='email-ddns',
     version='0.0.1',
-    description="A DDNS server/client that only rely on free services (email, outer ip getter)",
+    description=("A DDNS server/client that only rely on free services (email, "
+                 "outer ip getter)"),
     long_description=long_description,
     author="Hong-She Liang",
     author_email='starofrainnight@gmail.com',
