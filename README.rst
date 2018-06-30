@@ -6,8 +6,8 @@ email-ddns
 .. image:: https://img.shields.io/pypi/v/email-ddns.svg
     :target: https://pypi.python.org/pypi/email-ddns
 
-.. image:: https://travis-ci.org/starofrainnight/email-ddns.svg
-    :target: https://travis-ci.org/starofrainnight/email-ddns.html
+.. image:: https://travis-ci.org/starofrainnight/email-ddns.svg?branch=master
+    :target: https://travis-ci.org/starofrainnight/email-ddns
 
 .. image:: https://ci.appveyor.com/api/projects/status/github/starofrainnight/email-ddns?svg=true
     :target: https://ci.appveyor.com/project/starofrainnight/email-ddns
