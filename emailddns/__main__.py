@@ -53,7 +53,8 @@ def client(ctx, **kwargs):
 
     try:
         ip = fetch_update_email(
-            kwargs.imap_host, kwargs.imap_port, kwargs.account, kwargs.password)
+            kwargs.imap_host, kwargs.imap_port,
+            kwargs.account, kwargs.password)
         click.echo(ip)
     except NoEMailError:
         click.echo("NOTE: No IP update e-mails!")
