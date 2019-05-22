@@ -18,10 +18,10 @@ def send_update_email(host, port, account, password):
         myip = ipgetter.myip()
 
         # Send to my self
-        message = MIMEText(myip, 'plain', 'utf-8')
-        message['From'] = Header("SELF <%s>" % account, 'utf-8')
-        message['To'] = Header("SELF <%s>" % account, 'utf-8')
-        message['Subject'] = Header("[EMAIL-DDNS:UPDATE]", 'utf-8')
+        message = MIMEText(myip, "plain", "utf-8")
+        message["From"] = Header("SELF <%s>" % account, "utf-8")
+        message["To"] = Header("SELF <%s>" % account, "utf-8")
+        message["Subject"] = Header("[EMAIL-DDNS:UPDATE]", "utf-8")
 
         server.sendmail(account, [account], message.as_string())
     finally:
@@ -36,14 +36,14 @@ def fetch_update_email(host, port, account, password):
     conn.login(account, password)
     try:
         conn.select()
-        typ, msg_nums = conn.search('utf-8', '(FROM "SELF")')
+        typ, msg_nums = conn.search("utf-8", '(FROM "SELF")')
         nums = msg_nums[0].split()
         if len(nums) <= 0:
             raise NoEMailError("There does not have E-Mails!")
 
         num = nums[-1]  # Latest email
-        typ, data = conn.fetch(num, '(RFC822)')
-        if typ != 'OK':
+        typ, data = conn.fetch(num, "(RFC822)")
+        if typ != "OK":
             raise EMailFetchError("Failed to get email index: %s" % num)
 
         msg = email.message_from_string(data[0][1].decode())
@@ -65,7 +65,7 @@ def clear_update_emails(host, port, account, password):
     conn.login(account, password)
     try:
         conn.select()
-        typ, msg_nums = conn.search('utf-8', '(FROM "SELF")')
+        typ, msg_nums = conn.search("utf-8", '(FROM "SELF")')
         nums = msg_nums[0].split()
         if len(nums) <= 0:
             return
@@ -73,7 +73,7 @@ def clear_update_emails(host, port, account, password):
         # Remove all related e-mails except latest one
         nums = nums[:-1]
         for num in nums:
-            conn.store(num, '+FLAGS', '\\Deleted')
+            conn.store(num, "+FLAGS", "\\Deleted")
         conn.expunge()
     finally:
         conn.close()
