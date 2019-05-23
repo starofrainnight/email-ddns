@@ -10,7 +10,7 @@ with open("README.rst", encoding="utf-8") as readme_file, open(
 ) as history_file:
     long_description = readme_file.read() + "\n\n" + history_file.read()
 
-install_requires = ["click>=6.0", "ipgetter", "attrdict"]
+install_requires = ["click>=6.0", "ipgetter2", "attrdict"]
 
 setup_requires = ["pytest-runner"]
 

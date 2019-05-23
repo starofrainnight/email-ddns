@@ -3,9 +3,9 @@
 """Main module."""
 
 import email
-import ipgetter
 import smtplib
 import imaplib
+import ipgetter2.ipgetter1 as ipgetter
 from email.mime.text import MIMEText
 from email.header import Header
 from .exceptions import NoEMailError, EMailFetchError
