@@ -16,10 +16,22 @@ A DDNS server/client that only rely on free services (email, outer ip getter)
 
 * License: AGPL-3.0
 
-Features
+Usage
 --------
 
-* TODO
+This library provied a script you could just run under console
+
+Server:
+
+::
+
+    $ email-ddns -i imap.qq.com -s smtp.qq.com -a xxxx@qq.com -p password server
+
+Client:
+
+::
+
+    $ email-ddns -i imap.qq.com -s smtp.qq.com -a xxxx@qq.com -p password client
 
 Credits
 ---------
